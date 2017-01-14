@@ -1,7 +1,7 @@
 {
   "name": "ove-lang",
-  "description": "欧语言",
-  "version": "0.0.1",
+  "description": "哦语言",
+  "version": "0.1.0",
   "keywords": [],
   "scripts": {
     "dev": "webpack --watch",

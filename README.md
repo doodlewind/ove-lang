@@ -1,5 +1,5 @@
 # ove-lang
-TODO
+哦语言: 一门含蓄的编程语言
 
 
 ## 运行
@@ -45,5 +45,4 @@ npm run prod
 
 
 ## Changelog
-*   `0.0.1` TODO
-
+*   `0.1.0` 实现 scheme 核心子集

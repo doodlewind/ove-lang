@@ -47,6 +47,34 @@ module.exports = {
         '( begin ( define x 10 ) ( + x 0 ) )'
         .split(/\s+/),
       result: 10
+    },
+    { // 8
+      tokens:
+        '( + 苟 ( + 利 ( + 国  家 ) ) )'
+        .split(/\s+/),
+      result: '苟利国家'
+    },
+    { // 9
+      tokens:
+        '( define foo ( lambda ( x ) ( + 1 x ) ) )'
+        .split(/\s+/),
+      result: null
+    },
+    { // 10
+      tokens:
+        'foo'
+        .split(/\s+/),
+      result: 'foo'
+    },
+    { // 11
+      tokens: '( begin ( define foo ( lambda ( x ) ( + 1 x ) ) ) ( foo 5 ) )'
+        .split(/\s+/),
+      result: 6
+    },
+    { // 12
+      tokens: '( quote 1 )'
+        .split(/\s+/),
+      result: ['1']
     }
   ]
 }
