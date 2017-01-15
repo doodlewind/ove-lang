@@ -1,5 +1,5 @@
 # ove-lang
-哦语言: 一门图样图森破的编程语言
+哦语言: 一门真正粉丝的编程语言
 
 
 ## 使用
@@ -20,10 +20,12 @@ $ 3
 ## API
 
 ``` js
-ove (text, hasPreprocess = true)
+const ove = require('ove-lang')
+
+ove.exec(text, hasPreprocess = true)
 ```
 
-输入源码 `text`，返回语言执行结果。当 `hasPreprocess` 为 `false` 时，不进行替换中文关键字的预处理，将 `text` 作为 Scheme 源码执行。
+输入源码 `text`，返回语言执行结果。当可选的 `hasPreprocess` 为 `false` 时，不进行替换中文关键字的预处理，将 `text` 作为 Scheme 源码执行。
 
 
 ## 开发
@@ -45,7 +47,7 @@ npm run dev
 npm run prod
 ```
 
-测试
+测试：
 
 ``` text
 node test
@@ -53,6 +55,7 @@ node test
 
 
 ## Changelog
+* `0.2.1` 修复浏览器 API
 * `0.2.0`
     * 实现预处理器
     * 实现词法分析器

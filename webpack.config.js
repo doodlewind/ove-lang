@@ -1,10 +1,10 @@
-var path = require('path');
+var path = require('path')
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: './src/main.js',
   output: {
     path: path.join(__dirname, '/dist'),
-    filename: "bundle.js"
+    filename: 'ove.bundle.js'
   },
   module: {
     loaders: [
