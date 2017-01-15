@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 const lexer = require('./lexer')
 const parser = require('./parser')
 const runtime = require('./runtime')
@@ -10,7 +9,5 @@ const ove = {
   }
 }
 
-// Node 环境下解释输入参数
-console.log(ove.exec(process.argv[2]))
-
-module.exports = ove
+// 浏览器环境 API
+window.ove = ove

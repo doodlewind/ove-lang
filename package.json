@@ -1,7 +1,7 @@
 {
   "name": "ove-lang",
   "description": "哦语言",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "author": "doodlewind",
   "license": "MIT",
   "bin": "src/main.js",
