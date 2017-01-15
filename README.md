@@ -45,9 +45,15 @@ npm run dev
 npm run prod
 ```
 
+测试
+
+``` text
+node test
+```
+
 
 ## Changelog
-* `0.2.0` 
+* `0.2.0`
     * 实现预处理器
     * 实现词法分析器
     * 支持浮点数
