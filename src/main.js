@@ -1,19 +1,15 @@
-const assert = require('assert')
+#!/usr/bin/env node
 const lexer = require('./lexer')
 const parser = require('./parser')
 const runtime = require('./runtime')
-const tokens = require('../test/tokens')
-const input = require('../test/input')
-const index = parseInt(process.argv[2])
 
-function testToken (index) {
-  let item = tokens[index]
-  return runtime.run(parser.parse(item.tokens))
+function ove (text, hasPreprocess = true) {
+  return runtime.run(parser.parse(lexer.lex(text, hasPreprocess)))
 }
 
-function testOve (index) {
-  let text = input[index].text
-  return lexer.lex(text)
-}
+// 浏览器环境 API
+if (typeof window !== 'undefined') window.ove = ove
+// Node 环境下解释输入参数
+else console.log(ove(process.argv[2]))
 
-console.log(testOve(index))
+module.exports = ove

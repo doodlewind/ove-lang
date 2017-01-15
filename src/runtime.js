@@ -22,8 +22,11 @@ function evaluate (x, env) {
   if (hasVar(x, env) && !(x instanceof Function)) return findVar(x, env)
   // 常量字面量
   else if (!(x instanceof Array)) {
-    if (!parseInt(x) && x !== '0') return x
-    else return parseInt(x)
+    if (!isNaN(x)) {
+      if (x.toString().indexOf('.') > -1) return parseFloat(x)
+      else return parseInt(x)
+    }
+    else return x
   }
   // 表达式字面量
   else if (x[0] === 'quote') {

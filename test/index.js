@@ -12,7 +12,8 @@ tokens.forEach(item => {
 })
 
 input.forEach(item => {
-  // TODO
-  // let val = runtime.run(parser.parse(lexer.lex(item.text)))
-  // assert.deepEqual(val, item.result)
+  let tokens = lexer.lex(item.text)
+  if (item.tokens) assert.deepEqual(tokens, item.tokens)
+  let val = runtime.run(parser.parse(tokens))
+  assert.deepEqual(val, item.result)
 })
