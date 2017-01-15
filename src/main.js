@@ -1,12 +1,19 @@
 const assert = require('assert')
+const lexer = require('./lexer')
 const parser = require('./parser')
 const runtime = require('./runtime')
-const mockData = require('./mockData')
+const tokens = require('../test/tokens')
+const input = require('../test/input')
 const index = parseInt(process.argv[2])
 
 function testToken (index) {
-  let testData = mockData.tokensTest[index]
-  return runtime.run(parser.parse(testData.tokens))
+  let item = tokens[index]
+  return runtime.run(parser.parse(item.tokens))
 }
 
-console.log(testToken(index))
+function testOve (index) {
+  let text = input[index].text
+  return lexer.lex(text)
+}
+
+console.log(testOve(index))

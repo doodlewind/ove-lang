@@ -1,10 +1,18 @@
 const assert = require('assert')
+const lexer = require('../src/lexer')
 const parser = require('../src/parser')
 const runtime = require('../src/runtime')
-const mockData = require('../src/mockData')
+const tokens = require('./tokens')
+const input = require('./input')
 
 
-mockData.tokensTest.forEach(test => {
-  let val = runtime.run(parser.parse(test.tokens))
-  assert.deepEqual(val, test.result)
+tokens.forEach(item => {
+  let val = runtime.run(parser.parse(item.tokens))
+  assert.deepEqual(val, item.result)
+})
+
+input.forEach(item => {
+  // TODO
+  // let val = runtime.run(parser.parse(lexer.lex(item.text)))
+  // assert.deepEqual(val, item.result)
 })

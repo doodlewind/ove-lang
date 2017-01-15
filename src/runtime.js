@@ -41,8 +41,7 @@ function evaluate (x, env) {
   }
   // 函数声明
   else if (x[0] === 'lambda') {
-    return function () {
-      let args = Array.prototype.slice.apply(arguments)[0]
+    return function (args) {
       let localEnv = {}
       for (let i = 0; i < x[1].length; i++) {
         localEnv[x[1][i]] = evaluate(args[i], env)
