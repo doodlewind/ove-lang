@@ -64,3 +64,7 @@ node test
     * 添加测试用例
     * 适配 Node 与浏览器环境
 * `0.1.0` 实现 scheme 核心子集
+
+
+## License
+MIT
